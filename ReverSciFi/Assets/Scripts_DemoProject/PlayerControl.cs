@@ -98,6 +98,10 @@ public class PlayerControl : MonoBehaviour
 	}
 	
 	
+	/*void OnCollisionEnter2D (Collision2D collision) {
+		Debug.Log ("PlayerControler.OnCollisionEnter: "+gameObject.name);
+	}*/
+
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.

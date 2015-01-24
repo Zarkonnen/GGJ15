@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
 	private bool dead = false;			// Whether or not the enemy is dead.
 	private Score score;				// Reference to the Score script.
 
+	public GameObject splash;
+
 	
 	void Awake()
 	{
@@ -92,7 +94,7 @@ public class Enemy : MonoBehaviour
 		// If the enemy has zero or fewer hit points and isn't dead yet...
 		if(HP <= 0 && !dead)
 			// ... call the death function.
-			Death ();
+			StartCoroutine(Death ());
 	}
 	
 	public void Hurt()
@@ -101,49 +103,62 @@ public class Enemy : MonoBehaviour
 		HP--;
 	}
 	
-	void Death()
+	IEnumerator Death()
 	{
-		// Find all of the sprite renderers on this object and it's children.
-		SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
+		if (!dead) {
+			// Find all of the sprite renderers on this object and it's children.
+			SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
 
-		// Disable all of them sprite renderers.
-		foreach(SpriteRenderer s in otherRenderers)
-		{
-			s.enabled = false;
+			// Disable all of them sprite renderers.
+			foreach (SpriteRenderer s in otherRenderers) {
+				s.enabled = false;
+			}
+
+			// Re-enable the main sprite renderer and set it's sprite to the deadEnemy sprite.
+			ren.enabled = true;
+			ren.sprite = deadEnemy;
+
+			// Increase the score by 100 points
+			//score.score += 100;
+
+			// Set dead to true.
+			dead = true;
+
+			// Allow the enemy to rotate and spin it by adding a torque.
+			/*rigidbody2D.fixedAngle = false;
+			rigidbody2D.AddTorque(Random.Range(deathSpinMin,deathSpinMax));*/
+
+			// Find all of the colliders on the gameobject and set them all to be triggers.
+			Collider2D[] cols = GetComponents<Collider2D>();
+			foreach(Collider2D c in cols) {
+				c.isTrigger = true;
+			}
+
+			GameObject splashInstance = Instantiate(splash, transform.position, transform.rotation) as GameObject;
+			splashInstance.SetActive(false);
+
+			// Play a random audioclip from the deathClips array.
+			int i = Random.Range(0, deathClips.Length);
+			AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
+
+			yield return new WaitForSeconds(0.3f);
+
+			splashInstance.SetActive(true);
+
+			rigidbody2D.isKinematic = true;
+
+			//rigidbody.isKinematic = true;
+
+
+
+			// Create a vector that is just above the enemy.
+			/*Vector3 scorePos;
+			scorePos = transform.position;
+			scorePos.y += 1.5f;*/
+
+			// Instantiate the 100 points prefab at this point.
+			//Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
 		}
-
-		// Re-enable the main sprite renderer and set it's sprite to the deadEnemy sprite.
-		ren.enabled = true;
-		ren.sprite = deadEnemy;
-
-		// Increase the score by 100 points
-		score.score += 100;
-
-		// Set dead to true.
-		dead = true;
-
-		// Allow the enemy to rotate and spin it by adding a torque.
-		rigidbody2D.fixedAngle = false;
-		rigidbody2D.AddTorque(Random.Range(deathSpinMin,deathSpinMax));
-
-		// Find all of the colliders on the gameobject and set them all to be triggers.
-		Collider2D[] cols = GetComponents<Collider2D>();
-		foreach(Collider2D c in cols)
-		{
-			c.isTrigger = true;
-		}
-
-		// Play a random audioclip from the deathClips array.
-		int i = Random.Range(0, deathClips.Length);
-		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
-
-		// Create a vector that is just above the enemy.
-		Vector3 scorePos;
-		scorePos = transform.position;
-		scorePos.y += 1.5f;
-
-		// Instantiate the 100 points prefab at this point.
-		Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
 	}
 
 

@@ -71,6 +71,7 @@ public class AudioManager : MonoBehaviour {
 		timeSinceExciting = 0;
 		if (!excitingPlaying) {
 			Fabric.EventManager.Instance.SetParameter ("Music", "Cymb", 1.0f, null);
+			excitingPlaying = true;
 		}
 	}
 
@@ -78,6 +79,7 @@ public class AudioManager : MonoBehaviour {
 		timeSinceDanger = 0;
 		if (!dangerPlaying) {
 			Fabric.EventManager.Instance.SetParameter ("Music", "Main", 1.0f, null);
+			dangerPlaying = true;
 		}
 	}
 
@@ -85,6 +87,7 @@ public class AudioManager : MonoBehaviour {
 		timeSinceInteresting = 0;
 		if (!interestingPlaying) {
 			Fabric.EventManager.Instance.SetParameter ("Music", "Spheric", 1.0f, null);
+			interestingPlaying = true;
 		}
 	}
 
@@ -92,6 +95,7 @@ public class AudioManager : MonoBehaviour {
 		timeSinceSlog = 0;
 		if (!slogPlaying) {
 			Fabric.EventManager.Instance.SetParameter ("Music", "Drums", 1.0f, null);
+			slogPlaying = true;
 		}
 	}
 }

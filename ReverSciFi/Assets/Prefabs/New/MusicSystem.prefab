@@ -2433,7 +2433,7 @@ MonoBehaviour:
   _max: 1
   _loopBehaviour: 0
   _velocity: 0
-  _seekSpeed: 0
+  _seekSpeed: .5
   _seekTarget: 0
   _value: 0
   _resetToDefaultValue: 0
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   _max: 1
   _loopBehaviour: 0
   _velocity: 0
-  _seekSpeed: 0
+  _seekSpeed: .200000003
   _seekTarget: 0
   _value: 0
   _resetToDefaultValue: 0
@@ -2477,7 +2477,7 @@ MonoBehaviour:
   _max: 1
   _loopBehaviour: 0
   _velocity: 0
-  _seekSpeed: 0
+  _seekSpeed: .5
   _seekTarget: 0
   _value: 0
   _resetToDefaultValue: 0
@@ -2499,7 +2499,7 @@ MonoBehaviour:
   _max: 1
   _loopBehaviour: 0
   _velocity: 0
-  _seekSpeed: 0
+  _seekSpeed: .5
   _seekTarget: 0
   _value: 0
   _resetToDefaultValue: 0
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   _max: 1
   _loopBehaviour: 0
   _velocity: 0
-  _seekSpeed: 0
+  _seekSpeed: .5
   _seekTarget: 0
   _value: 0
   _resetToDefaultValue: 0
@@ -2543,7 +2543,7 @@ MonoBehaviour:
   _max: 1
   _loopBehaviour: 0
   _velocity: 0
-  _seekSpeed: 0
+  _seekSpeed: .5
   _seekTarget: 0
   _value: 0
   _resetToDefaultValue: 0

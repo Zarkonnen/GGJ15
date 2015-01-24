@@ -9,6 +9,11 @@ public class PlayerControl : MonoBehaviour
 	public KeyCode jumpKey = KeyCode.Space;
 	public KeyCode sneakKey = KeyCode.LeftShift;
 
+	public float sneakVelocity = 0.5f;
+	public float walkVelocity = 1.5f;
+
+	public float animatedVelocity = 0.0f;
+
 	[HideInInspector]
 	public bool facingRight = false;			// For determining which way the player is currently facing.
 	[HideInInspector]
@@ -60,19 +65,27 @@ public class PlayerControl : MonoBehaviour
 		//float h = Input.GetAxis("Horizontal");
 		float h = 0;
 		if (Input.GetKey(leftKey)) {
-			h = -1.0f;
+			if (Input.GetKey(sneakKey)) {
+				h = -walkVelocity;
+			} else {
+				h = -sneakVelocity;
+			}
 		}
 		if (Input.GetKey(rightKey)) {
-			h = 1.0f;
+			if (Input.GetKey(sneakKey)) {
+				h = walkVelocity;
+			} else {
+				h = sneakVelocity;
+			}
 		}
 
-		if (Input.GetKey(sneakKey)) {
-			h = h / 2.0f;
+		if (animatedVelocity != 0) {
+			h = animatedVelocity;
 		}
 
-		if (Mathf.Abs(h) > 0.5f) {
+		if (Mathf.Abs(h) > 0.1f) {
 			rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 1.0f;
-			h = h / h * Mathf.Sign(h);
+			//h = h / h * Mathf.Sign(h);
 		} else {
 			rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 10.0f;
 		}
@@ -105,7 +118,7 @@ public class PlayerControl : MonoBehaviour
 		if(jump)
 		{
 			// Set the Jump animator trigger parameter.
-			//anim.SetTrigger("Jump");
+			anim.SetTrigger("Jump");
 
 			// Play a random jump audio clip.
 			int i = Random.Range(0, jumpClips.Length);

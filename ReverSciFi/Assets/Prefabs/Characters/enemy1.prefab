@@ -61,6 +61,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 449196}
   - 61: {fileID: 6149196}
+  - 114: {fileID: 11497482}
   m_Layer: 10
   m_Name: killArea
   m_TagString: Untagged
@@ -75,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.8899994, y: -6.34000015, z: 0}
+  m_LocalPosition: {x: 19.6800003, y: -5.5999999, z: 0}
   m_LocalScale: {x: 1.49707949, y: 1.49707949, z: 1.49707949}
   m_Children:
   - {fileID: 400010}
@@ -164,7 +165,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 149196}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .421857119, y: .156226739}
   m_Center: {x: -.0546897128, y: .421886742}
 --- !u!95 &9500000
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef474d77e998d4890bff85103fb4c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 1
   HP: 1
   deadEnemy: {fileID: 21300000, guid: bd1989b4e42a0454097f657dfb368bd8, type: 3}
   damagedEnemy: {fileID: 0}
@@ -207,6 +208,7 @@ MonoBehaviour:
   stopTimer: 0
   lastCollisionTime: 0
   lastCollisionCount: 0
+  splash: {fileID: 100000, guid: 3c2f4b0a1dcea4377b723eea567d654b, type: 2}
 --- !u!114 &11449196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,6 +221,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Assets_Main-4
+--- !u!114 &11497482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f346c9b80c64d4cb29ab3abf66165f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killObject: {fileID: 100000}
 --- !u!212 &21200006
 SpriteRenderer:
   m_ObjectHideFlags: 1

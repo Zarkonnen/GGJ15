@@ -6,8 +6,10 @@ public class KillTrigger : MonoBehaviour {
 	public GameObject killObject;
 
 	// Use this for initialization
-	void OnTriggerEnter2D () {
+	void OnTriggerEnter2D (Collider2D other) {
 		Debug.Log ("KillTrigger.OnCollisionEnter2D: "+killObject.name);
-		killObject.SendMessage("Death", SendMessageOptions.DontRequireReceiver);
+		if (other.tag == "Player") {
+			killObject.SendMessage("Death", SendMessageOptions.DontRequireReceiver);
+		}
 	}
 }

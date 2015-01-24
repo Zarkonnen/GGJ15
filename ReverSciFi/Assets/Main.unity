@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity1
+  id: Assets_Main-1
 --- !u!1 &54569420
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity2
+  id: Assets_Main-2
 --- !u!1 &94952386
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity3
+  id: Assets_Main-3
 --- !u!1 &99076961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity4
+  id: Assets_Main-4
 --- !u!1 &356976505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity5
+  id: Assets_Main-5
 --- !u!1 &914620772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,7 +4372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity6
+  id: Assets_Main-6
 --- !u!1001 &1243540802
 Prefab:
   m_ObjectHideFlags: 0
@@ -4764,7 +4764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity7
+  id: Assets_Main-7
 --- !u!1 &1398366854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity8
+  id: Assets_Main-8
 --- !u!1 &1606052606
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,7 +5337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity9
+  id: Assets_Main-9
 --- !u!1 &1774251796
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,7 +5768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity10
+  id: Assets_Main-10
 --- !u!1 &2057925478
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,7 +5892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce35a0a8e0f34a83a10280cfa476e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Assets/Main.unity11
+  id: Assets_Main-11
 --- !u!95 &2086931161
 Animator:
   serializedVersion: 3

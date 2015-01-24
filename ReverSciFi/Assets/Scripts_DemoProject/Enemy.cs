@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
 
 	public float stopTimer;
+	public float lastCollisionTime = 0.0f;
+	public int lastCollisionCount = 0;
 
 	private SpriteRenderer ren;			// Reference to the sprite renderer.
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
@@ -39,16 +41,26 @@ public class Enemy : MonoBehaviour
 			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
 
 			// If any of the colliders is an Obstacle...
-			if(c.tag == "Obstacle")
+			if ((c.tag == "Obstacle") || (c.tag == "ground"))
 			{
-				// ... Flip the enemy and stop checking the other colliders.
-				Flip ();
-				break;
-			}
-			if(c.tag == "ground")
-			{
-				// ... Flip the enemy and stop checking the other colliders.
-				Flip ();
+				if (stopTimer > 0) {
+					// do nothing
+				} else {
+					// ... Flip the enemy and stop checking the other colliders.
+					Flip ();
+
+					// check for lots of recent collision
+					if ((Time.time - lastCollisionTime) < 0.1f) {
+						lastCollisionCount += 1;
+					} else {
+						lastCollisionCount = 0;
+					}
+					lastCollisionTime = Time.time;
+					if (lastCollisionCount > 3) {
+						stopTimer = 3.0f;
+					}
+				}
+
 				break;
 			}
 			if (c.tag == "Enemy") {

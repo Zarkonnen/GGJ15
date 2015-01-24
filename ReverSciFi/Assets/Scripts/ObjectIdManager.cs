@@ -11,7 +11,7 @@ public class ObjectIdManager : MonoBehaviour {
 
 	public static string GetNewObjectId () {
 		id += 1;
-		return EditorApplication.currentScene + id.ToString();
+		return EditorApplication.currentScene.Replace("/","_").Replace(".unity","") + "-" + id.ToString();
 	}
 
 	public static void ResetAllIds () {

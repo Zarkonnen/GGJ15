@@ -107,8 +107,7 @@ public class Enemy : MonoBehaviour
 		SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
 
 		// Disable all of them sprite renderers.
-		foreach(SpriteRenderer s in otherRenderers)
-		{
+		foreach (SpriteRenderer s in otherRenderers) {
 			s.enabled = false;
 		}
 
@@ -117,19 +116,18 @@ public class Enemy : MonoBehaviour
 		ren.sprite = deadEnemy;
 
 		// Increase the score by 100 points
-		score.score += 100;
+		//score.score += 100;
 
 		// Set dead to true.
 		dead = true;
 
 		// Allow the enemy to rotate and spin it by adding a torque.
-		rigidbody2D.fixedAngle = false;
-		rigidbody2D.AddTorque(Random.Range(deathSpinMin,deathSpinMax));
+		/*rigidbody2D.fixedAngle = false;
+		rigidbody2D.AddTorque(Random.Range(deathSpinMin,deathSpinMax));*/
 
 		// Find all of the colliders on the gameobject and set them all to be triggers.
 		Collider2D[] cols = GetComponents<Collider2D>();
-		foreach(Collider2D c in cols)
-		{
+		foreach(Collider2D c in cols) {
 			c.isTrigger = true;
 		}
 
@@ -143,7 +141,7 @@ public class Enemy : MonoBehaviour
 		scorePos.y += 1.5f;
 
 		// Instantiate the 100 points prefab at this point.
-		Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
+		//Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
 	}
 
 

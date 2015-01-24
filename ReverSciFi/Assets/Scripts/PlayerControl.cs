@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
 	public float sneakVelocity = 0.5f;
 	public float walkVelocity = 1.5f;
 
+	public float animatedVelocity = 0.0f;
+
 	[HideInInspector]
 	public bool facingRight = false;			// For determining which way the player is currently facing.
 	[HideInInspector]
@@ -75,6 +77,10 @@ public class PlayerControl : MonoBehaviour
 			} else {
 				h = sneakVelocity;
 			}
+		}
+
+		if (animatedVelocity != 0) {
+			h = animatedVelocity;
 		}
 
 		if (Mathf.Abs(h) > 0.1f) {

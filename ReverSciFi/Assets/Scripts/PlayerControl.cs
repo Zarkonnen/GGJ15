@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
 	public KeyCode sneakKey = KeyCode.LeftShift;
 
 	[HideInInspector]
-	public bool facingRight = true;			// For determining which way the player is currently facing.
+	public bool facingRight = false;			// For determining which way the player is currently facing.
 	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
 
@@ -37,6 +37,9 @@ public class PlayerControl : MonoBehaviour
 		anim = GetComponent<Animator>();
 
 		rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 1.0f;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 
@@ -75,7 +78,7 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
-//		anim.SetFloat("Speed", Mathf.Abs(h));
+		anim.SetFloat("Speed", Mathf.Abs(h));
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * rigidbody2D.velocity.x < maxSpeed)
@@ -106,7 +109,7 @@ public class PlayerControl : MonoBehaviour
 
 			// Play a random jump audio clip.
 			int i = Random.Range(0, jumpClips.Length);
-			AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
 			// Add a vertical force to the player.
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));

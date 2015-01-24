@@ -208,7 +208,7 @@ MonoBehaviour:
   stopTimer: 0
   lastCollisionTime: 0
   lastCollisionCount: 0
-  splash: {fileID: 0}
+  splash: {fileID: 100000, guid: 3c2f4b0a1dcea4377b723eea567d654b, type: 2}
 --- !u!114 &11449196
 MonoBehaviour:
   m_ObjectHideFlags: 1

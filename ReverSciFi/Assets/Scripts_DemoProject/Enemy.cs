@@ -34,11 +34,11 @@ public class Enemy : MonoBehaviour
 	{
 		// Create an array of all the colliders in front of the enemy.
 		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
-		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
+//		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
 
 		// Check each of the colliders.
 		foreach(Collider2D c in frontHits) {
-			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
+//			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
 
 			// If any of the colliders is an Obstacle...
 			if ((c.tag == "Obstacle") || (c.tag == "ground"))

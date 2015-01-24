@@ -35,6 +35,8 @@ public class PlayerControl : MonoBehaviour
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
+
+		rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 1.0f;
 	}
 
 
@@ -44,7 +46,7 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetKey(jumpKey) && grounded)
+		if(Input.GetKeyDown(jumpKey) && grounded)
 			jump = true;
 	}
 
@@ -69,7 +71,7 @@ public class PlayerControl : MonoBehaviour
 			rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 1.0f;
 			h = h / h * Mathf.Sign(h);
 		} else {
-			rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 1000.0f;
+			rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 10.0f;
 		}
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.

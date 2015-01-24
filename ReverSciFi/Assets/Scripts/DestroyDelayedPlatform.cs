@@ -7,7 +7,7 @@ public class DestroyDelayedPlatform : MonoBehaviour {
 
 
 	void OnCollisionEnter2D (Collision2D collision) {
-		Debug.Log ("DestroyDelayedPlatform.OnCollisionEnter: "+gameObject.name+" collision.collider.tag "+collision.collider.tag);
+//		Debug.Log ("DestroyDelayedPlatform.OnCollisionEnter: "+gameObject.name+" collision.collider.tag "+collision.collider.tag);
 
 		if (collision.collider.tag == "Player") {
 			Invoke("Destroy", destroyTimer);

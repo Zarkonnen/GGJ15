@@ -393,7 +393,6 @@ GameObject:
   - 58: {fileID: 94952388}
   - 95: {fileID: 94952387}
   - 114: {fileID: 94952393}
-  - 114: {fileID: 94952394}
   m_Layer: 10
   m_Name: enemy1
   m_TagString: Enemy
@@ -452,6 +451,7 @@ MonoBehaviour:
   hundredPointsUI: {fileID: 100006, guid: 31974361bc9e44fb18c77b64a4cb3bbd, type: 2}
   deathSpinMin: -100
   deathSpinMax: 100
+  stopTimer: 0
 --- !u!50 &94952390
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -509,17 +509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Assets/Main.unity3
---- !u!114 &94952394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 94952386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d0ef22f56ee44d7b8247c36a2b5983, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &99076961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1060,7 @@ MonoBehaviour:
   hundredPointsUI: {fileID: 100006, guid: 31974361bc9e44fb18c77b64a4cb3bbd, type: 2}
   deathSpinMin: -100
   deathSpinMax: 100
+  stopTimer: 0
 --- !u!50 &340076119
 Rigidbody2D:
   m_ObjectHideFlags: 0

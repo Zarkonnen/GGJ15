@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 	public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
 	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
 
+	public float stopTimer;
 
 	private SpriteRenderer ren;			// Reference to the sprite renderer.
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
@@ -30,11 +31,13 @@ public class Enemy : MonoBehaviour
 	void FixedUpdate ()
 	{
 		// Create an array of all the colliders in front of the enemy.
-		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position, 1);
+		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
+		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
 
 		// Check each of the colliders.
-		foreach(Collider2D c in frontHits)
-		{
+		foreach(Collider2D c in frontHits) {
+			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
+
 			// If any of the colliders is an Obstacle...
 			if(c.tag == "Obstacle")
 			{
@@ -42,10 +45,32 @@ public class Enemy : MonoBehaviour
 				Flip ();
 				break;
 			}
+			if(c.tag == "ground")
+			{
+				// ... Flip the enemy and stop checking the other colliders.
+				Flip ();
+				break;
+			}
+			if (c.tag == "Enemy") {
+
+				if (Random.Range(0.0f,1.0f) > 0.5f) {
+					Flip ();
+				} else {
+					stopTimer = Random.Range(0.2f, 0.5f);
+				}
+				Debug.Log ("Enemy.FixedUpdate: collided with enemy stop for "+stopTimer); 
+				break;
+			}
 		}
 
-		// Set the enemy's velocity to moveSpeed in the x direction.
-		rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
+		if (stopTimer > 0.0f) {
+			stopTimer -= Time.deltaTime;
+			// dont move while stopped
+			rigidbody2D.velocity = new Vector2(transform.localScale.x * 0, rigidbody2D.velocity.y);	
+		} else {
+			// Set the enemy's velocity to moveSpeed in the x direction.
+			rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
+		}
 
 		// If the enemy has one hit point left and has a damagedEnemy sprite...
 		if(HP == 1 && damagedEnemy != null)

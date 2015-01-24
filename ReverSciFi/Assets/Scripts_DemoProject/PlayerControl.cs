@@ -3,6 +3,12 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
+
+	public KeyCode leftKey = KeyCode.A;
+	public KeyCode rightKey = KeyCode.D;
+	public KeyCode jumpKey = KeyCode.Space;
+	public KeyCode sneakKey = KeyCode.LeftShift;
+
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
@@ -38,7 +44,7 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded)
+		if(Input.GetKey(jumpKey) && grounded)
 			jump = true;
 	}
 
@@ -46,7 +52,18 @@ public class PlayerControl : MonoBehaviour
 	void FixedUpdate ()
 	{
 		// Cache the horizontal input.
-		float h = Input.GetAxis("Horizontal");
+		//float h = Input.GetAxis("Horizontal");
+		float h = 0;
+		if (Input.GetKey(leftKey)) {
+			h = -1.0f;
+		}
+		if (Input.GetKey(rightKey)) {
+			h = 1.0f;
+		}
+
+		if (Input.GetKey(sneakKey)) {
+			h = h / 2.0f;
+		}
 
 		if (Mathf.Abs(h) > 0.5f) {
 			rigidbody2D.GetComponent<CircleCollider2D>().sharedMaterial.friction = 1.0f;

@@ -848,7 +848,7 @@ Transform:
   m_PrefabInternal: {fileID: 976081890}
   m_GameObject: {fileID: 343268969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.38679123, y: .0728435516, z: -16.25}
+  m_LocalPosition: {x: -7.32000017, y: 1.61000001, z: -16.25}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1544519245}
@@ -2997,11 +2997,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 457972, guid: aec9252a123c345858f25ac010100abd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.38679123
+      value: -7.32000017
       objectReference: {fileID: 0}
     - target: {fileID: 457972, guid: aec9252a123c345858f25ac010100abd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0728435516
+      value: 1.61000001
       objectReference: {fileID: 0}
     - target: {fileID: 457972, guid: aec9252a123c345858f25ac010100abd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3025,7 +3025,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 457972, guid: aec9252a123c345858f25ac010100abd, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11457970, guid: aec9252a123c345858f25ac010100abd, type: 2}
       propertyPath: moveSpeed
@@ -3422,9 +3422,9 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 5
   jumpSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5c084c6ea78584eea9310b69db1af575, type: 3}
+  - {fileID: 8300000, guid: d9b36bd96081141919d3fe690ebd7f41, type: 3}
+  - {fileID: 8300000, guid: 633553664e7934b59839a34abf1a0d96, type: 3}
   jumpForce: 700
   taunts: []
   textTaunts: []

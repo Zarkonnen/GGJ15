@@ -5,12 +5,13 @@ public class Enemy : MonoBehaviour
 {
 	public float moveSpeed = 2f;		// The speed the enemy moves at.
 	public int HP = 2;					// How many times the enemy can be hit before it dies.
-	public Sprite deadEnemy;			// A sprite of the enemy when it's dead.
-	public Sprite damagedEnemy;			// An optional sprite of the enemy when it's damaged.
+	//public Sprite deadEnemy;			// A sprite of the enemy when it's dead.
+	//public Sprite damagedEnemy;			// An optional sprite of the enemy when it's damaged.
 	public AudioClip[] deathClips;		// An array of audioclips that can play when the enemy dies.
-	public GameObject hundredPointsUI;	// A prefab of 100 that appears when the enemy dies.
-	public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
-	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
+	//public GameObject hundredPointsUI;	// A prefab of 100 that appears when the enemy dies.
+	//public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
+	//public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
+	public GameObject[] spawnings;
 
 	public float stopTimer;
 	public float lastCollisionTime = 0.0f;
@@ -21,19 +22,22 @@ public class Enemy : MonoBehaviour
 	private bool dead = false;			// Whether or not the enemy is dead.
 	private Score score;				// Reference to the Score script.
 
-	public GameObject splash;
+	//public GameObject splash;
+	Animator anim;
 
 	
-	void Awake()
-	{
+	void Awake() {
 		// Setting up the references.
 		ren = transform.Find("body").GetComponent<SpriteRenderer>();
 		frontCheck = transform.Find("frontCheck").transform;
+		anim = GetComponent<Animator>();
 //		score = GameObject.Find("Score").GetComponent<Score>();
 	}
 
-	void FixedUpdate ()
-	{
+	void FixedUpdate () {
+		if (dead)
+			return;
+
 		// Create an array of all the colliders in front of the enemy.
 		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
 //		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
@@ -43,7 +47,7 @@ public class Enemy : MonoBehaviour
 //			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
 
 			// If any of the colliders is an Obstacle...
-			if ((c.tag == "Obstacle") || (c.tag == "ground"))
+			if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground"))
 			{
 				if (stopTimer > 0) {
 					// do nothing
@@ -84,68 +88,89 @@ public class Enemy : MonoBehaviour
 		} else {
 			// Set the enemy's velocity to moveSpeed in the x direction.
 			rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
+
+			if (anim != null) {
+				anim.SetFloat("Speed", rigidbody2D.velocity.magnitude);
+			}
 		}
 
 		// If the enemy has one hit point left and has a damagedEnemy sprite...
-		if(HP == 1 && damagedEnemy != null)
+/*		if(HP == 1 && damagedEnemy != null)
 			// ... set the sprite renderer's sprite to be the damagedEnemy sprite.
-			ren.sprite = damagedEnemy;
+			ren.sprite = damagedEnemy;*/
 			
 		// If the enemy has zero or fewer hit points and isn't dead yet...
-		if(HP <= 0 && !dead)
+		/*if(HP <= 0 && !dead)
 			// ... call the death function.
-			StartCoroutine(Death ());
+			StartCoroutine(Death ());*/
 	}
 	
-	public void Hurt()
+	/*public void Hurt()
 	{
 		// Reduce the number of hit points by one.
 		HP--;
-	}
+	}*/
 	
-	IEnumerator Death()
-	{
+	IEnumerator Death() {
 		if (!dead) {
 			// Find all of the sprite renderers on this object and it's children.
-			SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
+			/*SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
 
 			// Disable all of them sprite renderers.
 			foreach (SpriteRenderer s in otherRenderers) {
 				s.enabled = false;
-			}
+			}*/
 
 			// Re-enable the main sprite renderer and set it's sprite to the deadEnemy sprite.
-			ren.enabled = true;
-			ren.sprite = deadEnemy;
+			//ren.enabled = true;
+			//ren.sprite = deadEnemy;
 
 			// Increase the score by 100 points
 			//score.score += 100;
 
 			// Set dead to true.
 			dead = true;
+			if (anim != null) {
+				anim.SetFloat("Speed", 0);
+				anim.SetBool("Dead", true);
+			}
 
 			// Allow the enemy to rotate and spin it by adding a torque.
 			/*rigidbody2D.fixedAngle = false;
 			rigidbody2D.AddTorque(Random.Range(deathSpinMin,deathSpinMax));*/
 
-			// Find all of the colliders on the gameobject and set them all to be triggers.
+			rigidbody2D.isKinematic = true;
 			Collider2D[] cols = GetComponents<Collider2D>();
 			foreach(Collider2D c in cols) {
 				c.isTrigger = true;
 			}
-
+			
+			// Find all of the colliders on the gameobject and set them all to be triggers.
+			/*
 			GameObject splashInstance = Instantiate(splash, transform.position, transform.rotation) as GameObject;
-			splashInstance.SetActive(false);
+			splashInstance.SetActive(false);*/
 
 			// Play a random audioclip from the deathClips array.
 			int i = Random.Range(0, deathClips.Length);
 			AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
 
-			yield return new WaitForSeconds(0.3f);
+			yield return new WaitForSeconds(1.5f);
 
-			splashInstance.SetActive(true);
+			switch (spawnings.Length) {
+			case 1:
+				Instantiate(spawnings[0], transform.position, transform.rotation);
+				break;
+			case 2:
+				Instantiate(spawnings[0], transform.position-Vector3.right, transform.rotation);
+				Instantiate(spawnings[1], transform.position+Vector3.right, transform.rotation);
+				break;
+			}
 
-			rigidbody2D.isKinematic = true;
+			Destroy(gameObject);
+
+			//splashInstance.SetActive(true);
+
+			//rigidbody2D.isKinematic = true;
 
 			//rigidbody.isKinematic = true;
 
@@ -162,8 +187,7 @@ public class Enemy : MonoBehaviour
 	}
 
 
-	public void Flip()
-	{
+	public void Flip() {
 		// Multiply the x component of localScale by -1.
 		Vector3 enemyScale = transform.localScale;
 		enemyScale.x *= -1;

@@ -12,7 +12,7 @@ public class AdditivelyLoadLevels : UnitySingleton<AdditivelyLoadLevels>
 			if (name == Application.loadedLevelName)
 				continue;
 
-			Application.LoadLevelAdditiveAsync (name);
+			Application.LoadLevelAdditive (name);
 		}
 	}
 

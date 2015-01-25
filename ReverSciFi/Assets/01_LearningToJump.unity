@@ -1346,7 +1346,7 @@ GameObject:
   - 82: {fileID: 405166045}
   m_Layer: 0
   m_Name: SoundTrigger
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3367,6 +3367,57 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 04ac6284c59a443369fd2710cefd9b64, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: 1}
+--- !u!1 &648165350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 648165351}
+  - 61: {fileID: 648165353}
+  - 114: {fileID: 648165352}
+  m_Layer: 0
+  m_Name: WinningCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648165351
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648165350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.7099991, y: .270000011, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1164109640}
+  m_RootOrder: 40
+--- !u!114 &648165352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648165350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef70de08091f74f3594190444dbec17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &648165353
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648165350}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 20, y: 5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &656871109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,6 +4603,7 @@ MonoBehaviour:
   ySmooth: 2
   maxXAndY: {x: 1000, y: 8}
   minXAndY: {x: -5, y: -5}
+  player: {fileID: 0}
 --- !u!124 &934884390
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5668,6 +5720,7 @@ Transform:
   - {fileID: 1497253279}
   - {fileID: 1283524359}
   - {fileID: 1585229000}
+  - {fileID: 648165351}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1185769755
@@ -6328,7 +6381,7 @@ GameObject:
   - 114: {fileID: 1311081979}
   m_Layer: 0
   m_Name: InterestingArea
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -579,6 +579,7 @@ MonoBehaviour:
   ySmooth: 2
   maxXAndY: {x: 5, y: 5}
   minXAndY: {x: -5, y: -5}
+  player: {fileID: 0}
 --- !u!124 &470921949
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2434,6 +2435,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11409362, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
+      propertyPath: jumpKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409362, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
+      propertyPath: rightKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409362, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
+      propertyPath: leftKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409362, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
+      propertyPath: sneakKey
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
   m_RootGameObject: {fileID: 1312121634}
@@ -2828,10 +2845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6804babace5cc47dd8b61abb292c4be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftKey: 97
-  rightKey: 100
-  jumpKey: 32
-  sneakKey: 304
+  leftKey: 0
+  rightKey: 0
+  jumpKey: 0
+  sneakKey: 0
   sneakVelocity: .5
   walkVelocity: 1.5
   animatedVelocity: 0

@@ -966,7 +966,7 @@ Animator:
   m_GameObject: {fileID: 728531878}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1075bdb42d88c41439844dc5357b3ea1, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa8a9c1400e74351af7b151a8d68723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 1
 --- !u!1001 &783530539
 Prefab:
   m_ObjectHideFlags: 0
@@ -1134,7 +1134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &802724514
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -2377,11 +2377,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 494204, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -16.2975006
+      value: 2.6099999
       objectReference: {fileID: 0}
     - target: {fileID: 494204, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.18499994
+      value: -6.3499999
       objectReference: {fileID: 0}
     - target: {fileID: 494204, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2792,7 +2792,7 @@ Transform:
   m_PrefabInternal: {fileID: 1019487500}
   m_GameObject: {fileID: 1312121634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.2975006, y: -6.18499994, z: 0}
+  m_LocalPosition: {x: 2.6099999, y: -6.3499999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2035871242}
@@ -3321,7 +3321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1677190938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3682,15 +3682,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Eine Zeit fern unserer Zeit. Es sind nicht Aliens, gegen den die Sternenkriege
-    seit \xC4onen toben, sondern etwas Dunklereres, geboren aus den Tiefen der menschlichen
-    Abgr\xFCnde. \n\nCaptain Rever und seine Mechanikerin, Ms. Scottocs, haben eine
-    der heftigsten Schlachten hinter sich, gegen ein Wesen, das schrecklicher war,
-    als alles, was sie kannten. \n\nSie konnten den Gegner zwar bezwingen, doch das
-    Raumschiff hat Schaden genommen; das Schiff fliegt unsteuerbar auf eine Sonne
-    zu.\n\nMs. Scottocs fehlen aber die Werkzeuge, sie muss sie im Maschinenraum holen.
-    Doch der Weg ist gef\xE4hrlich und voller T\xFCcken  und noch immer lauern Monster
-    in den Schatten. Schafft sie den Weg hin und zur\xFCck?"
+  m_Text: "Mr. Scottocs schaffte es, die Br\xFCcke wieder soweit in Stand zu stellen,
+    dass Captain Rever das Raumschiff von der Sonne wegsteuern und das Verschwinden
+    im ewigen Vergessen verhindern konnte. Was beide aber nicht wussten: Ihre Aktionen,
+    ihre Fl\xFCche, ihr Weg voller Zerst\xF6rung und Tod hatten ein neues Monster
+    geboren eines, das noch viel schrecklicher, f\xFCrchterlicher, dunkler und gr\xF6sser
+    war, als alles, was sie je zuvor gesehen hatten. Und ihr Schiff steuerte direkt
+    darauf zu.\n\nFrack."
 --- !u!222 &1977690528
 CanvasRenderer:
   m_ObjectHideFlags: 0

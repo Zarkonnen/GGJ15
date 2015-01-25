@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour
 {
 	public float moveSpeed = 2f;		// The speed the enemy moves at.
-	public int HP = 2;					// How many times the enemy can be hit before it dies.
+	//public int HP = 2;					// How many times the enemy can be hit before it dies.
 	//public Sprite deadEnemy;			// A sprite of the enemy when it's dead.
 	//public Sprite damagedEnemy;			// An optional sprite of the enemy when it's damaged.
 	public AudioClip[] deathSounds;		// An array of audioclips that can play when the enemy dies.
@@ -40,58 +40,60 @@ public class Enemy : MonoBehaviour
 			return;
 
 		// Create an array of all the colliders in front of the enemy.
-		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
-//		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
+		if (frontCheck != null) {		
+			Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
+	//		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
 
-		// Check each of the colliders.
-		foreach(Collider2D c in frontHits) {
-//			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
+			// Check each of the colliders.
+			foreach(Collider2D c in frontHits) {
+	//			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
 
-			// If any of the colliders is an Obstacle...
-			if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground"))
-			{
-				if (stopTimer > 0) {
-					// do nothing
-				} else {
-					// ... Flip the enemy and stop checking the other colliders.
-					Flip ();
-
-					// check for lots of recent collision
-					if ((Time.time - lastCollisionTime) < 0.1f) {
-						lastCollisionCount += 1;
+				// If any of the colliders is an Obstacle...
+				if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground"))
+				{
+					if (stopTimer > 0) {
+						// do nothing
 					} else {
-						lastCollisionCount = 0;
+						// ... Flip the enemy and stop checking the other colliders.
+						Flip ();
+
+						// check for lots of recent collision
+						if ((Time.time - lastCollisionTime) < 0.1f) {
+							lastCollisionCount += 1;
+						} else {
+							lastCollisionCount = 0;
+						}
+						lastCollisionTime = Time.time;
+						if (lastCollisionCount > 3) {
+							stopTimer = 3.0f;
+						}
 					}
-					lastCollisionTime = Time.time;
-					if (lastCollisionCount > 3) {
-						stopTimer = 3.0f;
+
+					break;
+				}
+				if (c.tag == "Enemy") {
+
+					if (Random.Range(0.0f,1.0f) > 0.5f) {
+						Flip ();
+					} else {
+						stopTimer = Random.Range(0.2f, 0.5f);
 					}
+					Debug.Log ("Enemy.FixedUpdate: collided with enemy stop for "+stopTimer); 
+					break;
 				}
-
-				break;
 			}
-			if (c.tag == "Enemy") {
 
-				if (Random.Range(0.0f,1.0f) > 0.5f) {
-					Flip ();
-				} else {
-					stopTimer = Random.Range(0.2f, 0.5f);
+			if (stopTimer > 0.0f) {
+				stopTimer -= Time.deltaTime;
+				// dont move while stopped
+				rigidbody2D.velocity = new Vector2(transform.localScale.x * 0, rigidbody2D.velocity.y);	
+			} else {
+				// Set the enemy's velocity to moveSpeed in the x direction.
+				rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
+				
+				if (anim != null) {
+					anim.SetFloat("Speed", rigidbody2D.velocity.magnitude);
 				}
-				Debug.Log ("Enemy.FixedUpdate: collided with enemy stop for "+stopTimer); 
-				break;
-			}
-		}
-
-		if (stopTimer > 0.0f) {
-			stopTimer -= Time.deltaTime;
-			// dont move while stopped
-			rigidbody2D.velocity = new Vector2(transform.localScale.x * 0, rigidbody2D.velocity.y);	
-		} else {
-			// Set the enemy's velocity to moveSpeed in the x direction.
-			rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
-
-			if (anim != null) {
-				anim.SetFloat("Speed", rigidbody2D.velocity.magnitude);
 			}
 		}
 

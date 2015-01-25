@@ -8,25 +8,28 @@ public class TextWriter : MonoBehaviour {
 	//public Camera textCamera;
 	public GameObject character;
 
-	public string[] texte = new string[] {
-		"@&!¥#@@!!",
-		"Jesses Marie!",
-		"Dark becomes my sight and view...",
-		"Frack!",
-		"Oh God!",
-		"Hellfire!",
-		"Faster, faster!",
-		"Noooooo.....!",
-		"Aaaaaaargh!",
-		"Dissolve, you silly son of monsterfracker!",
-		"Motherfrack!",
-		"Down we go...",
-		"Ooops!",
-		"Come quickly, Mr. Scottocs, I need your help on the bridge! We're going down if you don't fix it fast. Damn monsterfrackers!"
+	private string[] texte = new string[] {
+		"What a fight!",
+		
+		"I feel exhausted.",
+		
+		"I have to get Ms. Scottocs, urgently!",
+		
+		"Are we crashing?",
+		
+		"Quickly, now!",
+		
+		"Frack, that was close.",
+		
+		"Less than 20 Minuten to go.",
+		
+		"Jesses Maria!",
+		
+		"What do we do now?"
 	};
 	int stringId = -1;
 
-	public float timePerText = 5.0f;
+	private float timePerText = 2.5f;
 	float timer = 0.0f;
 	public bool isPlaying = false;
 
@@ -45,7 +48,7 @@ public class TextWriter : MonoBehaviour {
 		}
 		timer -= Time.deltaTime;
 		if (timer < 0.0f) {
-			stringId += 1;
+			stringId = Mathf.Min (stringId + 1, texte.Length-1);
 			timer = timePerText;
 			GetComponent<Text>().text = texte[stringId];
 		}

@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/IntroSequence.unity
+    path: Assets/00_LOGOSCENE.unity
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/00_IntroSequence.unity
+  - enabled: 1
+    path: Assets/01_LearningToJump.unity

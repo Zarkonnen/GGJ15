@@ -515,12 +515,12 @@ RectTransform:
   m_GameObject: {fileID: 1895016403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -.361857206, y: .357464075, z: .357464075}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 167153520}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: .0813953504}
-  m_AnchorMax: {x: 1, y: .918627977}
-  m_AnchoredPosition: {x: -97.0067749, y: -.170959473}
-  m_SizeDelta: {x: 0, y: 14}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -379, y: 35}
+  m_SizeDelta: {x: -385, y: -74}
   m_Pivot: {x: 1, y: 0}

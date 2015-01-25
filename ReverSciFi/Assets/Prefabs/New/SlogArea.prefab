@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11462806}
   m_Layer: 0
   m_Name: SlogArea
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

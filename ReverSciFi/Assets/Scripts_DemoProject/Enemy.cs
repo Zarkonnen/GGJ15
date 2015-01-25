@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 	//public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
 	public GameObject[] spawnings;
 
-	public float stopTimer;
+	private float stopTimer;
 	public float lastCollisionTime = 0.0f;
 	public int lastCollisionCount = 0;
 
@@ -31,7 +31,10 @@ public class Enemy : MonoBehaviour
 	void Awake() {
 		// Setting up the references.
 		ren = transform.Find("body").GetComponent<SpriteRenderer>();
-		frontCheck = transform.Find("frontCheck");
+		frontCheck = transform.FindChild("frontCheck");
+		if (frontCheck == null) {
+			Debug.Log ("FrontCheck not found!");
+		}
 		anim = GetComponent<Animator>();
 //		score = GameObject.Find("Score").GetComponent<Score>();
 	}
@@ -41,62 +44,65 @@ public class Enemy : MonoBehaviour
 			return;
 
 		// Create an array of all the colliders in front of the enemy.
-		if (frontCheck != null) {		
-			Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
-	//		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
+		if (frontCheck == null) {		
+			return;
+		}
+		Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
+//		Debug.Log ("Enemy.FixedUpdate: frontHits "+frontHits.Length);
 
-			// Check each of the colliders.
-			foreach(Collider2D c in frontHits) {
-	//			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
+		// Check each of the colliders.
+		foreach(Collider2D c in frontHits) {
+//			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
 
-				// If any of the colliders is an Obstacle...
-				if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground") || (c.tag == "Untagged") || (c.tag == null) || (c.tag == ""))
-				{
-					if (stopTimer > 0) {
-						// do nothing
+			// If any of the colliders is an Obstacle...
+			if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground") || c.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+				if (stopTimer > 0) {
+					// do nothing
+				} else {
+					// ... Flip the enemy and stop checking the other colliders.
+					Flip ();
+
+					// check for lots of recent collision
+					if ((Time.time - lastCollisionTime) < 0.1f) {
+						lastCollisionCount += 1;
 					} else {
-						// ... Flip the enemy and stop checking the other colliders.
-						Flip ();
-
-						// check for lots of recent collision
-						if ((Time.time - lastCollisionTime) < 0.1f) {
-							lastCollisionCount += 1;
-						} else {
-							lastCollisionCount = 0;
-						}
-						lastCollisionTime = Time.time;
-						if (lastCollisionCount > 3) {
-							stopTimer = 3.0f;
-						}
+						lastCollisionCount = 0;
 					}
-
-					break;
-				}
-				if (c.tag == "Enemy") {
-
-					if (Random.Range(0.0f,1.0f) > 0.5f) {
-						Flip ();
-					} else {
-						stopTimer = Random.Range(0.2f, 0.5f);
+					lastCollisionTime = Time.time;
+					if (lastCollisionCount > 3) {
+						Debug.Log ("Enemy.FixedUpdate: "+lastCollisionCount+" with "+c.tag+" "+c.name);
+						stopTimer = 3.0f;
+						lastCollisionCount = 0;
 					}
-					Debug.Log ("Enemy.FixedUpdate: collided with enemy stop for "+stopTimer); 
-					break;
 				}
+
+				break;
 			}
+			if (c.tag == "Enemy") {
 
-			if (stopTimer > 0.0f) {
-				stopTimer -= Time.deltaTime;
-				// dont move while stopped
-				rigidbody2D.velocity = new Vector2(transform.localScale.x * 0, rigidbody2D.velocity.y);	
-			} else {
-				// Set the enemy's velocity to moveSpeed in the x direction.
-				rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
-				
-				if (anim != null) {
-					anim.SetFloat("Speed", rigidbody2D.velocity.magnitude);
+				if (Random.Range(0.0f,1.0f) > 0.5f) {
+					Flip ();
+				} else {
+					stopTimer = Random.Range(0.1f, 0.3f);
 				}
+				Debug.Log ("Enemy.FixedUpdate: collided with enemy stop for "+stopTimer); 
+				break;
 			}
 		}
+
+		if (stopTimer > 0.0f) {
+			stopTimer -= Time.deltaTime;
+			// dont move while stopped
+			rigidbody2D.velocity = new Vector2(transform.localScale.x * 0, rigidbody2D.velocity.y);	
+		} else {
+			// Set the enemy's velocity to moveSpeed in the x direction.
+			rigidbody2D.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);	
+			
+			if (anim != null) {
+				anim.SetFloat("Speed", rigidbody2D.velocity.magnitude);
+			}
+		}
+
 
 		// If the enemy has one hit point left and has a damagedEnemy sprite...
 /*		if(HP == 1 && damagedEnemy != null)
@@ -181,6 +187,11 @@ public class Enemy : MonoBehaviour
 			case 2:
 				Instantiate(spawnings[0], transform.position-Vector3.right, transform.rotation);
 				Instantiate(spawnings[1], transform.position+Vector3.right, transform.rotation);
+				break;
+			case 3:
+				Instantiate(spawnings[0], transform.position-Vector3.right, transform.rotation);
+				Instantiate(spawnings[1], transform.position+Vector3.right, transform.rotation);
+				Instantiate(spawnings[2], transform.position, transform.rotation);
 				break;
 			}
 

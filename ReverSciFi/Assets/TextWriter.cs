@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class TextWriter : MonoBehaviour {
 
+	public Camera mainCamera;
+	//public Camera textCamera;
+	public GameObject character;
+
 	public string[] texte = new string[] {
 		"@&!¥#@@!!",
 		"Jesses Marie!",
@@ -32,6 +36,9 @@ public class TextWriter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Vector3 charScreenPos = mainCamera.WorldToScreenPoint(character.transform.position);
+		Vector2 textScreenPos = GUIUtility.ScreenToGUIPoint(new Vector2(charScreenPos.x, charScreenPos.y));
+		transform.position = textScreenPos; //textCamera.WorldToScreenPoint( character.transform.position );
 		timer -= Time.deltaTime;
 		if (timer < 0.0f) {
 			stringId += 1;

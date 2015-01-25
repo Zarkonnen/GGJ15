@@ -9,6 +9,7 @@ public class DestroyDelayedPlatform : MonoBehaviour {
 //		Debug.Log ("DestroyDelayedPlatform.OnCollisionEnter: "+gameObject.name+" collision.collider.tag "+collision.collider.tag);
 
 		if (!destroying && collision.collider.tag == "Player") {
+			GetComponent<AudioSource>().Play();
 			Invoke("Destroy", destroyTimer);
 			transform.FindChild("Crack").GetComponentInChildren<Animator>().SetTrigger("Start");
 			destroying = true;

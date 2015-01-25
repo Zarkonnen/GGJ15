@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.44858122, y: 5.38368702, z: 0}
+  m_LocalPosition: {x: 7.69999981, y: 2.07999992, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 482768}
@@ -196,10 +196,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   HP: 1
-  deathClips:
-  - {fileID: 8300000, guid: 039514349165244c6a43be5c3070d14b, type: 3}
-  - {fileID: 8300000, guid: 85020549641fa452d9136ac2fc852efd, type: 3}
-  - {fileID: 8300000, guid: 2e20b5071623f44cf9c72acf016de4b6, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: dc2b0e3936b5a491a9c15cd90a2f9906, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: a14b87f908745449a831d05433c0be5f, type: 3}
   spawnings: []
   stopTimer: 0
   lastCollisionTime: 0

@@ -36,14 +36,14 @@ public class TextWriter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 charScreenPos = mainCamera.WorldToScreenPoint(character.transform.position);
+		/*Vector3 charScreenPos = mainCamera.WorldToScreenPoint(character.transform.position);
 		Vector2 textScreenPos = GUIUtility.ScreenToGUIPoint(new Vector2(charScreenPos.x, charScreenPos.y));
-		transform.position = textScreenPos; //textCamera.WorldToScreenPoint( character.transform.position );
+		transform.position = textScreenPos;
 		timer -= Time.deltaTime;
 		if (timer < 0.0f) {
 			stringId += 1;
 			timer = timePerText;
 			GetComponent<Text>().text = texte[stringId];
-		}
+		}*/
 	}
 }

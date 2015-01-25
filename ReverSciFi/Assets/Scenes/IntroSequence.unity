@@ -156,7 +156,7 @@ GameObject:
   - 222: {fileID: 350329410}
   - 114: {fileID: 350329409}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PressSpaceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1385,7 +1385,7 @@ GameObject:
   - 114: {fileID: 1744000231}
   - 114: {fileID: 1744000229}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SpeechText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1402,6 +1402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5f445f9c2f04fae9e0934853940326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1147904201}
+  character: {fileID: 1312121634}
   texte:
   - "@&!\xA5#@@!!"
   - Jesses Marie!

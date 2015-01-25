@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour
-{
+public class PlayerControl : MonoBehaviour {
 
   public KeyCode leftKey = KeyCode.A;
   public KeyCode rightKey = KeyCode.D;
@@ -26,17 +25,20 @@ public class PlayerControl : MonoBehaviour
   // Amount of force added to move the player left and right.
   public float maxSpeed = 5f;
   // The fastest the player can travel in the x axis.
-  public AudioClip[] jumpClips;
+  public AudioClip[] jumpSounds;
   // Array of clips for when the player jumps.
   public float jumpForce = 1000f;
-  // Amount of force added when the player jumps.
-  public AudioClip[] taunts;
+  
+	// Amount of force added when the player jumps.
+	public AudioClip[] taunts;
+	public string[] textTaunts;
   // Array of clips for when the player taunts.
-  public float tauntProbability = 50f;
+	public float tauntProbability = 50f;
   // Chance of a taunt happening.
   public float tauntDelay = 1f;
   // Delay for when the taunt should happen.
 
+	public AudioClip[] deathSounds;
 
   private int tauntIndex;
   // The index of the taunts array indicating the most recent taunt.
@@ -133,8 +135,11 @@ public class PlayerControl : MonoBehaviour
       //anim.SetTrigger("Jump");
 
       // Play a random jump audio clip.
-      int i = Random.Range (0, jumpClips.Length);
-      //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+      //int i = Random.Range (0, jumpClips.Length);
+			if (jumpSounds.Length>0)
+				AudioSource.PlayClipAtPoint(jumpSounds[Random.Range(0,jumpSounds.Length)], transform.position);
+		/*audio.clip = 
+		audio.Play ();*/
 
       // Add a vertical force to the player.
       rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
@@ -180,6 +185,23 @@ public class PlayerControl : MonoBehaviour
       }
     }
   }
+
+	public IEnumerator DeathCoroutine () {
+		yield return new WaitForSeconds(3.0f);
+		Application.LoadLevel(1);
+	}
+
+	public void Death () {
+		anim.SetBool ("Dead", true);
+		anim.SetFloat("Speed", 0);
+
+		if (deathSounds.Length>0) {
+			audio.clip = deathSounds[Random.Range(0,deathSounds.Length)];
+			audio.Play ();
+		}
+
+		StartCoroutine (DeathCoroutine());
+	}
 
 
   int TauntRandom ()

@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
 	public int HP = 2;					// How many times the enemy can be hit before it dies.
 	//public Sprite deadEnemy;			// A sprite of the enemy when it's dead.
 	//public Sprite damagedEnemy;			// An optional sprite of the enemy when it's damaged.
-	public AudioClip[] deathClips;		// An array of audioclips that can play when the enemy dies.
+	public AudioClip[] deathSounds;		// An array of audioclips that can play when the enemy dies.
+	public AudioClip[] attackSounds;
 	//public GameObject hundredPointsUI;	// A prefab of 100 that appears when the enemy dies.
 	//public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
 	//public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
@@ -104,7 +105,19 @@ public class Enemy : MonoBehaviour
 			// ... call the death function.
 			StartCoroutine(Death ());*/
 	}
-	
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Player") {
+			Debug.Log ("Enemy.OnCollisionEnter2D: collided with player");
+			coll.gameObject.GetComponent<PlayerControl>().Death ();
+
+			if (attackSounds.Length>0) {
+				int i = Random.Range(0, attackSounds.Length);
+				AudioSource.PlayClipAtPoint(attackSounds[i], transform.position);
+			}
+		}
+	}
+
 	/*public void Hurt()
 	{
 		// Reduce the number of hit points by one.
@@ -151,8 +164,10 @@ public class Enemy : MonoBehaviour
 			splashInstance.SetActive(false);*/
 
 			// Play a random audioclip from the deathClips array.
-			int i = Random.Range(0, deathClips.Length);
-			AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
+			if (deathSounds.Length > 0) {
+				int i = Random.Range(0, deathSounds.Length);
+				AudioSource.PlayClipAtPoint(deathSounds[i], transform.position);
+			}
 
 			yield return new WaitForSeconds(1.5f);
 

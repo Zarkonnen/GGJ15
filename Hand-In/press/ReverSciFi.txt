@@ -1,5 +1,5 @@
-A steampunk platformer browser game about a space ship which, after a heavy fight, is heading rudderlessly towards a sun. The player playing the captain, Mr. Rever, has to get to the mechanic, Ms. Scottocs, on the other side of the ship to bring her back and fix the bridge. 
+A steampunk platformer browser game about a space ship which, after a heavy fight, is heading rudderlessly towards a sun.
 
-The player has to manage both ways from the bridge to the engine room and back again, taking into consideration which actions he takes: Using plattforms for reaching higher grounds destroys the used plattforms and makes it harder to find the way back.
+The player playing the mechanic, Ms. Scottocs, has to get to the bridge to fix it and find the way back into the engine room. The player has to manage both ways from the engine room to the brigde and back, taking into consideration which actions he takes: Using plattforms for evading enemies destroys the used plattforms and makes it harder to find the way back.
 
-Elemenating enemies lets Mr. Rever reach the engine room faster but will span other, more difficult enemies that will make the way back harder to manage. The player runs against the running clock. The prototype is played using A, D and Space.
+The prototype is played using A, D and Space.

@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 	public int lastCollisionCount = 0;
 
 	private SpriteRenderer ren;			// Reference to the sprite renderer.
+	//private GameObject frontCheckGO;
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
 	private bool dead = false;			// Whether or not the enemy is dead.
 	private Score score;				// Reference to the Score script.
@@ -30,7 +31,7 @@ public class Enemy : MonoBehaviour
 	void Awake() {
 		// Setting up the references.
 		ren = transform.Find("body").GetComponent<SpriteRenderer>();
-		frontCheck = transform.Find("frontCheck").transform;
+		Transform frontCheck = transform.Find("frontCheck");
 		anim = GetComponent<Animator>();
 //		score = GameObject.Find("Score").GetComponent<Score>();
 	}

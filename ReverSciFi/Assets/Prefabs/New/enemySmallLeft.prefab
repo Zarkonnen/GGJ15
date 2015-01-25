@@ -219,14 +219,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  HP: 1
   deathSounds:
   - {fileID: 8300000, guid: bd50d8f211a5d42f9a62183a59f63f19, type: 3}
   - {fileID: 8300000, guid: d0dac921fc0384bbe8537d2ad8ba01e5, type: 3}
   - {fileID: 8300000, guid: eb73ab332eb4144968617fbeb133de51, type: 3}
   attackSounds:
   - {fileID: 8300000, guid: a14b87f908745449a831d05433c0be5f, type: 3}
-  spawnings: []
+  spawnings:
+  - {fileID: 143120, guid: 8195e857eda794622be4feb2b4d77fa9, type: 2}
   stopTimer: 0
   lastCollisionTime: 0
   lastCollisionCount: 0

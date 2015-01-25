@@ -138,7 +138,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PlayerWalk
-  m_Speed: 4
+  m_Speed: 12
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 7afac31c6b9304001a9a27c30ef7f3c2, type: 2}
@@ -168,7 +168,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PlayerSneak
-  m_Speed: 2
+  m_Speed: 6
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 7afac31c6b9304001a9a27c30ef7f3c2, type: 2}
@@ -209,9 +209,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110271046}
-      second: []
-    data:
       first: {fileID: 110261380}
       second:
       - {fileID: 110123766}
@@ -225,6 +222,9 @@ StateMachine:
       first: {fileID: 110230678}
       second:
       - {fileID: 110145364}
+    data:
+      first: {fileID: 110271046}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 72, y: -36, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

@@ -712,7 +712,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: maxXAndY.x
-      value: 300
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_BackGroundColor.a
@@ -729,6 +729,10 @@ Prefab:
     - target: {fileID: 2000000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_BackGroundColor.b
       value: .647058845
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
+      propertyPath: maxXAndY.y
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
@@ -3500,7 +3504,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484828, guid: a19273f7dd0104e219712be2e53c5e5c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 84.5
+      value: 184.039993
       objectReference: {fileID: 0}
     - target: {fileID: 484828, guid: a19273f7dd0104e219712be2e53c5e5c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3532,7 +3536,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484828, guid: a19273f7dd0104e219712be2e53c5e5c, type: 2}
       propertyPath: m_LocalScale.x
-      value: 300
+      value: 631.786255
       objectReference: {fileID: 0}
     - target: {fileID: 184826, guid: a19273f7dd0104e219712be2e53c5e5c, type: 2}
       propertyPath: m_Layer
@@ -4211,8 +4215,8 @@ Transform:
   m_PrefabInternal: {fileID: 691949722}
   m_GameObject: {fileID: 861954429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.5, y: .949999988, z: 0}
-  m_LocalScale: {x: 300, y: 1, z: 1}
+  m_LocalPosition: {x: 184.039993, y: .949999988, z: 0}
+  m_LocalScale: {x: 631.786255, y: 1, z: 1}
   m_Children:
   - {fileID: 965218948}
   - {fileID: 800101158}
@@ -4546,7 +4550,7 @@ MonoBehaviour:
   yMargin: 2
   xSmooth: 2
   ySmooth: 2
-  maxXAndY: {x: 300, y: 5}
+  maxXAndY: {x: 1000, y: 8}
   minXAndY: {x: -5, y: -5}
 --- !u!124 &934884390
 Behaviour:
@@ -5330,9 +5334,9 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 5
   jumpSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5c084c6ea78584eea9310b69db1af575, type: 3}
+  - {fileID: 8300000, guid: d9b36bd96081141919d3fe690ebd7f41, type: 3}
+  - {fileID: 8300000, guid: 633553664e7934b59839a34abf1a0d96, type: 3}
   jumpForce: 700
   taunts: []
   textTaunts: []
@@ -7643,7 +7647,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 485616, guid: 638fa2c6f301b4a4a83aad3a53624ce6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 77
+      value: 175.300003
       objectReference: {fileID: 0}
     - target: {fileID: 485616, guid: 638fa2c6f301b4a4a83aad3a53624ce6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7675,7 +7679,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485616, guid: 638fa2c6f301b4a4a83aad3a53624ce6, type: 2}
       propertyPath: m_LocalScale.x
-      value: 328.176666
+      value: 655.989685
       objectReference: {fileID: 0}
     - target: {fileID: 485616, guid: 638fa2c6f301b4a4a83aad3a53624ce6, type: 2}
       propertyPath: m_LocalScale.y
@@ -7761,8 +7765,8 @@ Transform:
   m_PrefabInternal: {fileID: 1834249545}
   m_GameObject: {fileID: 1834460791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77, y: -6.5999999, z: 0}
-  m_LocalScale: {x: 328.176666, y: 27.4949665, z: 3.58667636}
+  m_LocalPosition: {x: 175.300003, y: -6.5999999, z: 0}
+  m_LocalScale: {x: 655.989685, y: 27.4949665, z: 3.58667636}
   m_Children: []
   m_Father: {fileID: 203246683}
   m_RootOrder: 2

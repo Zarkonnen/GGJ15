@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour {
   // For determining which way the player is currently facing.
   [HideInInspector]
   public bool jump = false;
+	private bool dead = false;
   // Condition for whether the player should jump.
 
 
@@ -69,7 +70,7 @@ public class PlayerControl : MonoBehaviour {
     grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));  
 
     // If the jump button is pressed and the player is grounded then the player should jump.
-    if (Input.GetKeyDown (jumpKey) && grounded)
+    if (Input.GetKeyDown (jumpKey) && grounded && !dead)
       jump = true;
   }
 
@@ -192,15 +193,19 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	public void Death () {
-		anim.SetBool ("Dead", true);
-		anim.SetFloat("Speed", 0);
+		if (!dead) {
+			dead = true;
 
-		if (deathSounds.Length>0) {
-			audio.clip = deathSounds[Random.Range(0,deathSounds.Length)];
-			audio.Play ();
+			anim.SetBool ("Dead", true);
+			anim.SetFloat("Speed", 0);
+
+			if (deathSounds.Length>0) {
+				audio.clip = deathSounds[Random.Range(0,deathSounds.Length)];
+				audio.Play ();
+			}
+
+			StartCoroutine (DeathCoroutine());
 		}
-
-		StartCoroutine (DeathCoroutine());
 	}
 
 

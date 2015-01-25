@@ -4,6 +4,11 @@ using System.Collections;
 public class RepairConsole : MonoBehaviour {
 	public bool repaired = false;
 	public bool on = false;
+	public GameObject activateText;
+
+	void Start () {
+		activateText.SetActive(false);
+	}
 
 	void Update () {
 		if (!repaired && Random.Range (0, 100) < 10) {
@@ -19,6 +24,7 @@ public class RepairConsole : MonoBehaviour {
 			transform.FindChild("electric").GetComponent<AudioSource>().Stop();
 			transform.FindChild("repair").GetComponent<AudioSource>().Play();
 			transform.FindChild("repair").GetComponent<SpriteRenderer>().enabled = true;
+			activateText.SetActive(true);
 		}
 	}
 	

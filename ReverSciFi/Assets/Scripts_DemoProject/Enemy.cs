@@ -182,7 +182,7 @@ public class Enemy : MonoBehaviour
 
 			switch (spawnings.Length) {
 			case 1:
-				Instantiate(spawnings[0], transform.position, transform.rotation);
+				Instantiate(spawnings[0], transform.position - Vector3.up, transform.rotation);
 				break;
 			case 2:
 				Instantiate(spawnings[0], transform.position-Vector3.right, transform.rotation);
@@ -191,7 +191,7 @@ public class Enemy : MonoBehaviour
 			case 3:
 				Instantiate(spawnings[0], transform.position-Vector3.right, transform.rotation);
 				Instantiate(spawnings[1], transform.position+Vector3.right, transform.rotation);
-				Instantiate(spawnings[2], transform.position, transform.rotation);
+				Instantiate(spawnings[2], transform.position - Vector3.up, transform.rotation);
 				break;
 			}
 

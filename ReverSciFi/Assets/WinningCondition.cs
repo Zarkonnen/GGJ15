@@ -3,8 +3,11 @@ using System.Collections;
 
 public class WinningCondition : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
-		if (FindObjectOfType<RepairConsole>().repaired) {
-			Application.LoadLevel("100_ExtroSequence");
+		RepairConsole rc = FindObjectOfType<RepairConsole>();
+		if (rc != null) {
+			if (rc.repaired) {
+				Application.LoadLevel("100_ExtroSequence");
+			}
 		}
 	}
 }

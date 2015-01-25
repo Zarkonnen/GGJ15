@@ -12,6 +12,8 @@ public class LoadLevel : MonoBehaviour {
 	}
 
 	public void Load () {
-		Application.LoadLevel(level);
+		if (Time.timeSinceLevelLoad > 1.0f) {
+			Application.LoadLevel(level);
+		}
 	}
 }

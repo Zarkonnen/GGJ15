@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: 4.35878944, y: 4.14571571, z: -16.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456084}
@@ -124,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: .300000012, z: 5}
+  m_LocalPosition: {x: 2.5, y: .49000001, z: 5}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 401948}
@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: .300000012, z: 5}
+  m_LocalPosition: {x: -2.5, y: .49000001, z: 5}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 401948}
@@ -201,8 +201,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 5, y: .269711703}
-  m_Center: {x: 0, y: .465144157}
+  m_Size: {x: 5.0999999, y: .349999994}
+  m_Center: {x: 0, y: .5}
 --- !u!61 &6101950
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -212,7 +212,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 1debb068374764196a01e1c69c1f413f, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .800000012, y: .400000006}
+  m_Size: {x: .200000003, y: .330000013}
   m_Center: {x: 0, y: 0}
 --- !u!61 &6101952
 BoxCollider2D:
@@ -223,7 +223,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 1debb068374764196a01e1c69c1f413f, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .800000012, y: .400000006}
+  m_Size: {x: .200000003, y: .330000013}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11401948
 MonoBehaviour:
@@ -327,7 +327,7 @@ SliderJoint2D:
   m_CollideConnected: 0
   m_ConnectedRigidBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -9.98518753, y: 3.38344193}
+  m_ConnectedAnchor: {x: 29.4039726, y: 9.95313454}
   serializedVersion: 2
   m_Angle: -90
   m_UseMotor: 1

@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6171486}
   - 61: {fileID: 6171484}
   - 61: {fileID: 6171482}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BigCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalPosition: {x: -8.65114784, y: -1.10963821, z: -16.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,8 +40,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 1debb068374764196a01e1c69c1f413f, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .850655556, y: 3.54671049}
-  m_Center: {x: -1.7045927, y: -.0916447639}
+  m_Size: {x: .200000003, y: 3.70000005}
+  m_Center: {x: -1.75, y: -.0199999996}
 --- !u!61 &6171484
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -51,8 +51,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 1debb068374764196a01e1c69c1f413f, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .887308598, y: 3.58336878}
-  m_Center: {x: 1.68626499, y: -.0733156204}
+  m_Size: {x: .200000003, y: 3.70000005}
+  m_Center: {x: 1.75, y: -.0199999996}
 --- !u!61 &6171486
 BoxCollider2D:
   m_ObjectHideFlags: 1

@@ -22,7 +22,9 @@ public class CameraFollow : MonoBehaviour
 				break;
 			}
 		}*/
-		player = transform.parent.FindChild("Player").transform;
+		if (transform.parent && transform.parent.FindChild("Player")) {
+			player = transform.parent.FindChild("Player").transform;
+		}
 	}
 
 

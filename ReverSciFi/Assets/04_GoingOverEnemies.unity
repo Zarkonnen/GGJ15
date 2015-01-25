@@ -2161,7 +2161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &203246683
 Transform:
   m_ObjectHideFlags: 0
@@ -12837,9 +12837,9 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 5
   jumpSounds:
-  - {fileID: 8300000, guid: 5c084c6ea78584eea9310b69db1af575, type: 3}
-  - {fileID: 8300000, guid: d9b36bd96081141919d3fe690ebd7f41, type: 3}
-  - {fileID: 8300000, guid: 633553664e7934b59839a34abf1a0d96, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   jumpForce: 700
   taunts: []
   textTaunts: []

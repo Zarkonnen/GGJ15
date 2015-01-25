@@ -9,3 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroSequence.unity
   - enabled: 1
     path: Assets/Scenes/Main.unity
+  - enabled: 1
+    path: Assets/01_LearningToJump.unity
+  - enabled: 1
+    path: Assets/02_MeetingTheEnemy.unity
+  - enabled: 1
+    path: Assets/03_CrossingTheBridge.unity
+  - enabled: 1
+    path: Assets/04_GoingOverEnemies.unity
+  - enabled: 1
+    path: Assets/05_ReleasingEnemies.unity
+  - enabled: 1
+    path: Assets/99_YourScrewdriverIsInAnotherCastle.unity

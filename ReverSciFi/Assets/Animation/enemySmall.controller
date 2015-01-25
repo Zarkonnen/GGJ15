@@ -64,7 +64,7 @@ Transition:
   m_TransitionDuration: .00999999978
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 6
+  - m_ConditionMode: 1
     m_ConditionEvent: Dead
     m_EventTreshold: 0
     m_ExitTime: .899999976

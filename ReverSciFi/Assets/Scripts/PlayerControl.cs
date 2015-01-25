@@ -136,8 +136,8 @@ public class PlayerControl : MonoBehaviour {
 
       // Play a random jump audio clip.
       //int i = Random.Range (0, jumpClips.Length);
-			if (jumpSounds.Length>0)
-				AudioSource.PlayClipAtPoint(jumpSounds[Random.Range(0,jumpSounds.Length)], transform.position);
+		if (jumpSounds.Length>0)
+			AudioSource.PlayClipAtPoint(jumpSounds[Random.Range(0,jumpSounds.Length)], transform.position);
 		/*audio.clip = 
 		audio.Play ();*/
 

@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 	void Awake() {
 		// Setting up the references.
 		ren = transform.Find("body").GetComponent<SpriteRenderer>();
-		Transform frontCheck = transform.Find("frontCheck");
+		frontCheck = transform.Find("frontCheck");
 		anim = GetComponent<Animator>();
 //		score = GameObject.Find("Score").GetComponent<Score>();
 	}
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 	//			Debug.Log ("Enemy.FixedUpdate: collided with "+c.tag);
 
 				// If any of the colliders is an Obstacle...
-				if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground"))
+				if ((c.tag == "Obstacle") || (c.tag == "Crate") || (c.tag == "ground") || (c.tag == "Untagged") || (c.tag == null) || (c.tag == ""))
 				{
 					if (stopTimer > 0) {
 						// do nothing

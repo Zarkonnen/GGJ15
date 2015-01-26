@@ -4,10 +4,10 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour
 {
 
-	public KeyCode leftKey = KeyCode.A;
-	public KeyCode rightKey = KeyCode.D;
-	public KeyCode jumpKey = KeyCode.Space;
-	public KeyCode sneakKey = KeyCode.LeftShift;
+	public KeyCode[] leftKeys = new KeyCode[] {KeyCode.A, KeyCode.LeftArrow};
+	public KeyCode[] rightKeys = new KeyCode[] {KeyCode.D, KeyCode.RightArrow};
+	public KeyCode[] jumpKeys = new KeyCode[] {KeyCode.Space, KeyCode.UpArrow};
+	public KeyCode[] sneakKeys = new KeyCode[] {KeyCode.LeftShift};
 	public float sneakVelocity = 0.5f;
 	public float walkVelocity = 1.5f;
 	public float animatedVelocity = 0.0f;
@@ -82,8 +82,13 @@ public class PlayerControl : MonoBehaviour
 		}
 
 
+		bool jumpPressed = false;
+		foreach (KeyCode jKey in jumpKeys) {
+			jumpPressed = jumpPressed || Input.GetKey(jKey);
+		}
+
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if (Input.GetKeyDown (jumpKey) && ((Time.time - lastTimeGrounded) < 0.05f) && !dead) {
+		if (jumpPressed && ((Time.time - lastTimeGrounded) < 0.05f) && !dead) {
 			jump = true;
 		}
 	}
@@ -93,17 +98,31 @@ public class PlayerControl : MonoBehaviour
 			return;
 		}
 
+		bool leftPressed = false;
+		foreach (KeyCode lKey in leftKeys) {
+			leftPressed = leftPressed || Input.GetKey(lKey);
+		}
+		bool rightPressed = false;
+		foreach (KeyCode rKey in rightKeys) {
+			rightPressed = rightPressed || Input.GetKey(rKey);
+		}
+		bool sneakPressed = false;
+		foreach (KeyCode sKey in sneakKeys) {
+			sneakPressed = sneakPressed || Input.GetKey(sKey);
+		}
+
+
 		// horizontal movement controly by keyboard
 		float h = 0;
-		if (Input.GetKey (leftKey)) {
-			if (Input.GetKey (sneakKey)) {
+		if (leftPressed) {
+			if (sneakPressed) {
 				h = -walkVelocity;
 			} else {
 				h = -sneakVelocity;
 			}
 		}
-		if (Input.GetKey (rightKey)) {
-			if (Input.GetKey (sneakKey)) {
+		if (rightPressed) {
+			if (sneakPressed) {
 				h = walkVelocity;
 			} else {
 				h = sneakVelocity;

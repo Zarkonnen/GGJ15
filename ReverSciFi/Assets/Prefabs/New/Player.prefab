@@ -90,6 +90,7 @@ GameObject:
   - 58: {fileID: 5848104}
   - 81: {fileID: 8109966}
   - 82: {fileID: 8236694}
+  - 114: {fileID: 11490094}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -498,6 +499,17 @@ MonoBehaviour:
   tauntDelay: 1
   deathSounds:
   - {fileID: 8300000, guid: 65fa321660404421fa4025f848cabf04, type: 3}
+--- !u!114 &11490094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea69ed55f54f94cbfaa610bf34831308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21294206
 SpriteRenderer:
   m_ObjectHideFlags: 1

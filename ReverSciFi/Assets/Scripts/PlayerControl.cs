@@ -219,7 +219,7 @@ public class PlayerControl : MonoBehaviour
 
 	public IEnumerator DeathCoroutine () {
 		yield return new WaitForSeconds (3.0f);
-		Application.LoadLevel (1);
+		Application.LoadLevel (9);
 	}
 
 	public void Death () {

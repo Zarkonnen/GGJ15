@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -9,23 +9,28 @@ public class TextWriter : MonoBehaviour {
 	public GameObject character;
 
 	private string[] texte = new string[] {
-		"What a fight!",
+		"!!@@#¥!&@",
 		
-		"I feel exhausted.",
+		"Maria und Jesus!",
 		
-		"I have to get Ms. Scottocs, urgently!",
+		"Kraff!",
 		
-		"Are we crashing?",
+		"Bei den sieben Kreisen der Hölle!",
 		
-		"Quickly, now!",
+		"Was hat der Captain getan?!",
 		
-		"Frack, that was close.",
+		"O, diese Zerstörung! O, dieser Zerfall!",
 		
-		"Less than 20 Minuten to go.",
+		"Jajajajajajaja!",
+
+		"Und weniger als 20 Minuten Zeit!",
 		
-		"Jesses Maria!",
+		"Graaaaah! Säure!",
 		
-		"What do we do now?"
+		"Bzzzz! Jetzt gehts rund...",
+		
+		"Ich muss es flicken!",
+
 	};
 	int stringId = -1;
 

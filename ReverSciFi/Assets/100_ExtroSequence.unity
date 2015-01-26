@@ -1458,6 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa8a9c1400e74351af7b151a8d68723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueKeys: 200000000d00000012010000130100001401000011010000
   level: 2
 --- !u!1 &733966589
 GameObject:
@@ -2728,10 +2729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6804babace5cc47dd8b61abb292c4be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftKey: 0
-  rightKey: 0
-  jumpKey: 0
-  sneakKey: 0
+  leftKeys: 6100000014010000
+  rightKeys: 6400000013010000
+  jumpKeys: 2000000011010000
+  sneakKeys: 30010000
   sneakVelocity: .5
   walkVelocity: 1.5
   animatedVelocity: 0

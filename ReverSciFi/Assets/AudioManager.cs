@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour {
 		Fabric.EventManager.Instance.SetParameter ("Music", "Hum", 1.0f, null);
 		if (!slowIntro) {
 			musicPlaying = true;
-			Fabric.EventManager.Instance.SetParameter ("Music", "Base", 1.0f, null);
+			//Fabric.EventManager.Instance.SetParameter ("Music", "Base", 1.0f, null);
 		}
 		Instance = this;
 	}
@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour {
 
 		if (slowIntro && !musicPlaying && timeSinceStart > 4) {
 			musicPlaying = true;
-			Fabric.EventManager.Instance.SetParameter ("Music", "Base", 1.0f, null);
+			//Fabric.EventManager.Instance.SetParameter ("Music", "Base", 1.0f, null);
 		}
 
 		if (timeSinceExciting > 4 && excitingPlaying) {

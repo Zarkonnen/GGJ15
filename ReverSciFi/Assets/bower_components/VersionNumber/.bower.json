@@ -1,0 +1,38 @@
+{
+  "name": "VersionNumber",
+  "version": "0.1.0",
+  "homepage": "https://github.com/xeophin/net.xeophin.utils.version",
+  "authors": [
+    "Kaspar Manz <code@xeophin.net>"
+  ],
+  "description": "Takes the version number from the AssemblyInformation and exposes it.",
+  "main": "VersionNumberController.cs",
+  "keywords": [
+    "unity",
+    "unity3d",
+    "c#",
+    "utility"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ILabelView": "https://github.com/xeophin/net.xeophin.utils.ILabel.git#~1.0.0"
+  },
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "6c8d23f76cdbd46515c1d50674ca53b62da17303"
+  },
+  "_source": "git@github.com:xeophin/net.xeophin.utils.version.git",
+  "_target": "~0.1.0",
+  "_originalSource": "git@github.com:xeophin/net.xeophin.utils.version.git",
+  "_direct": true
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ILabelView",
+  "version": "1.0.0",
+  "homepage": "https://github.com/xeophin/net.xeophin.utils.ILabel",
+  "authors": [
+    "Kaspar Manz <code@xeophin.net>"
+  ],
+  "description": "A simple interface that exposes a label string.",
+  "main": "ILabelView.cs",
+  "keywords": [
+    "unity",
+    "unity3d",
+    "utility",
+    "c#"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

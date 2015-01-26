@@ -25,6 +25,8 @@ public class RepairConsole : MonoBehaviour {
 			transform.FindChild("repair").GetComponent<AudioSource>().Play();
 			transform.FindChild("repair").GetComponent<SpriteRenderer>().enabled = true;
 			activateText.SetActive(true);
+			GameObject.Find("darkness").GetComponent<Flicker>().repaired = true;
+			GameObject.Find("darkness").GetComponent<SpriteRenderer>().enabled = false;
 		}
 	}
 	

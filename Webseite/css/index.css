@@ -1,0 +1,149 @@
+body {
+    font-family:Helvetica, Verdana, Arial, sans-serif;
+    background-color:white;
+    color:black;
+    text-align:center;
+    position:relative;
+    width:1200px;
+    margin:0 auto;
+}
+
+h1 {
+    font-size:xx-large;
+}
+
+h2 {
+    font-size:x-large;
+    text-align:center;
+}
+
+h3 {
+    font-size:medium;
+    text-align:right;
+}
+
+h4 {
+    font-size:small;
+}
+
+section {
+    padding:14px 0 14px 0;
+}
+
+nav {
+    display:inline-block;
+    padding:20px 0 20px 0;
+}
+
+nav p {
+    float:left;
+    display:inline-block;
+    margin-right:10px;
+}
+
+a {
+    font-size:medium;
+    margin:0em;
+}
+
+a:active,
+a:hover {
+    color:#666;
+}
+
+footer {
+    color:#a3a3a3;
+}
+
+p.header {
+    font-size:small;
+}
+
+p.header span {
+    font-weight:bold;
+}
+
+p.footer {
+    font-size:x-small;
+}
+
+div.content {
+    margin:auto;
+    width:100%;
+    display:inline;
+}
+
+div.left {
+    float:left;
+    display:inline;
+    width:80%;
+    margin:5px 5px 5px 5px;
+    padding:0;
+}
+
+div.right {
+    float:left;
+    width:19%;
+    text-align:right;
+}
+
+div.broken,
+div.missing {
+    margin:auto;
+    position:relative;
+    top:50%;
+    width:193px;
+}
+
+div.broken a,
+div.missing a {
+    height:63px;
+    position:relative;
+    top:-31px;
+}
+
+div.broken img,
+div.missing img {
+    border-width:0px;
+}
+
+div.broken {
+    display:none;
+}
+
+div#unityPlayer {
+    cursor:default;
+    height:600px;
+    width:960px;
+}
+
+@media only screen and (max-width: 1024px) {
+    body:before {
+        content:"iPad H";
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body:before {
+        content:"iPad V";
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    body:before {
+        content:"iPhone V";
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body:before {
+        content:"iPhone(old) H";
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body:before {
+        content:"iPhone V";
+    }
+}
+

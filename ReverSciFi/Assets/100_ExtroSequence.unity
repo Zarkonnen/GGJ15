@@ -185,7 +185,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Leertaste dr\xFCcken zum Fortfahren\t"
+  m_Text: "Leertaste dr\xFCcken um neu zu starten"
 --- !u!222 &77865934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1478,6 +1478,7 @@ GameObject:
   - 4: {fileID: 728531879}
   - 95: {fileID: 728531880}
   - 114: {fileID: 728531881}
+  - 114: {fileID: 728531882}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -1557,7 +1558,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueKeys: 200000000d00000012010000130100001401000011010000
-  level: 2
+  level: 0
+--- !u!114 &728531882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728531878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea69ed55f54f94cbfaa610bf34831308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &733966589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,15 +3545,14 @@ MonoBehaviour:
   texte:
   - Uffff!!!
   - Geschafft!
-  - Auf zu neuen Abendteuern!
+  - Auf zu neuen Abenteuern!
   - Zu den Sternen!
-  - Wo lang?
-  - beim Planeten links vorbei
+  - "Am n\xE4chsten Planeten links vorbei,"
   - dann geradeaus
   - beim dritten Stern rechts abbiegen
   - in die Unendlichkeit
   - und noch viel weiter!
-  - "B\xF6ses, wir kommen!"
+  - Gefahr, wir kommen!
   isPlaying: 0
 --- !u!114 &1744000231
 MonoBehaviour:
@@ -3835,6 +3846,10 @@ Prefab:
     - target: {fileID: 22413822, guid: ed572dc4bde2a4989a1f9407934ab85d, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413820, guid: ed572dc4bde2a4989a1f9407934ab85d, type: 2}
+      propertyPath: m_Text
+      value: "Leertaste dr\xFCcken um neu zu starten"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed572dc4bde2a4989a1f9407934ab85d, type: 2}

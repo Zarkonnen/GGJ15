@@ -8,7 +8,7 @@ public class TextWriter : MonoBehaviour {
 	//public Camera textCamera;
 	public GameObject character;
 
-	private string[] texte = new string[] {
+	public string[] texte = new string[] {
 		"!!@@#¥!&@",
 		
 		"Maria und Jesus!",

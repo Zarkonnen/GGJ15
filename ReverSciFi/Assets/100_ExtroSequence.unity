@@ -1539,7 +1539,7 @@ Animator:
   m_GameObject: {fileID: 728531878}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 138d1c43de839430a90c451794251208, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1968,7 +1968,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 494204, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25.6000004
+      value: 29.7999992
       objectReference: {fileID: 0}
     - target: {fileID: 494204, guid: f097cb42159a4402aaf062c80dcd573d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2685,7 +2685,7 @@ Transform:
   m_PrefabInternal: {fileID: 1019487500}
   m_GameObject: {fileID: 1312121634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.6000004, y: -6.19999981, z: 0}
+  m_LocalPosition: {x: 29.7999992, y: -6.19999981, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2035871242}
@@ -3530,6 +3530,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1147904201}
   character: {fileID: 1312121634}
+  texte:
+  - Uffff!!!
+  - Geschafft!
+  - Auf zu neuen Abendteuern!
+  - Zu den Sternen!
+  - Wo lang?
+  - beim Planeten links vorbei
+  - dann geradeaus
+  - beim dritten Stern rechts abbiegen
+  - in die Unendlichkeit
+  - und noch viel weiter!
+  - "B\xF6ses, wir kommen!"
   isPlaying: 0
 --- !u!114 &1744000231
 MonoBehaviour:

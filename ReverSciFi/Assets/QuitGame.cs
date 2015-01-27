@@ -9,7 +9,7 @@ public class QuitGame : MonoBehaviour
 		if (Input.GetKeyUp (KeyCode.Escape)) {
 			#if UNITY_WEBPLAYER
 			Application.LoadLevel ("00_LOGOSCENE");
-			#elif
+			#else
 			Application.Quit ();
 			#endif
 		}
